@@ -1,181 +1,203 @@
 ---
+test-cases:
 - summary: |
     Проверка  возможности поиска товара по ключевому слову.
-  requirement: |
-    Пользователь должен иметь возможность искать товары по ключевому слову или категории
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+  - summary: |
+      Поисковой запрос не возвращает результат
+  environment: |
+      Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+      в браузере google chrome
+  steps-to-reproduce: |
     - Вводим в строку поиска "shoes"
     - Нажимаем кнопку "enter"
   expected-result: |
     Отображаются товары, содержащие в названии "shoes"
   actual-result: |
-    http://joxi.ru/krDyNQGud9nYWm
+    http://joxi.ru/5mdZ895HJdWVJA
+    Запрос не уходит на бэкенд
 ---
+test-cases:
 - summary: |
     Проверка  возможности поиска товара по ключевому слову.
-  requirement: |
-    Пользователь должен иметь возможность искать товары по ключевому слову или категории
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+  - summary: |
+    Поисковой запрос не возвращает результат
+  environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+  steps-to-reproduce: |
     - Вводим в строку поиска "ырщуы"
     - Нажимаем кнопку "enter"
   expected-result: |
     Отображается "ничего не найдено!"
   actual-result: |
-    
+    http://joxi.ru/MAjXK5ZTYBlN6m
+    Запрос не уходит на бэкенд
 ---
+test-cases:
 - summary: |
     Проверка  возможности поиска товара по категории.
-  requirement: |
-    Пользователь должен иметь возможность искать товары по ключевому слову или категории
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+  - summary: |
+    Поисковой запрос не возвращает результат
+  environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+  steps-to-reproduce: |
     - Вводим в строку поиска "smartphones"
     - Нажимаем кнопку "enter"
   expected-result: |
     Отображаются товары, из категории "smartphones"
   actual-result: |
-
+    Запрос не возвращает результат, в devtools нет подтверждения отправки запроса
+    http://joxi.ru/a2XPpNEUp9B8W2
+    
 ---
+test-cases:
 - summary: |
-    Проверка  возможности поиска товара по категории.
-  requirement: |
-    Пользователь должен иметь возможность искать товары по ключевому слову или категории
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Вводим в строку поиска "ыьфкезрщтуы"
-    - Нажимаем кнопку "enter"
-  expected-result: |
-    Отображается "ничего не найдено"
-  actual-result: |
-
+  Проверка  возможности поиска товара по категории.
+status:
+  fail
+bugreports:
+  - summary: |
+    Поисковой запрос не возвращает результат
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome
+steps-to-reproduce: |
+  - Вводим в строку поиска "ыьфкезрщтуы"
+  - Нажимаем кнопку "enter"
+expected-result: |
+  Отображается "ничего не найдено"
+actual-result: |
+  Запрос не возвращает результат, в devtools нет подтверждения отправки запроса
+  http://joxi.ru/l2ZDBqEtVYPgbr
 ---
+test-cases:
 - summary: |
     Проверка возможности фильтровать товары.
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Из предложенных в левой части страницы фильтров выбрать категорию "smartphones" и бренд "apple"
-  expected-result: |
-    Отображаются товары соответствующие категории и бренду
+status:
+  pass
 ---
+test-cases:
 - summary: |
     Проверка возможности фильтровать товары по цене.
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Вводим в строку 'price' ценовой интервал от 1000 до 10000
-    - Нажимаем кнопку "enter"
-  expected-result: |
+status:
+  fail
+bugreports:
+  - summary: |
+  Фильтр товаров по цене работает некорректно
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
+ - Вводим в строку 'price' ценовой интервал от 1000 до 10000
+  - Нажимаем кнопку "enter"
+expected-result: |
     Отображаются все товары в данном ценовом диапазоне
-   actual-result: |
-
+actual-result: |
+  Отображаются товары только с одной страницы в диапазоне как до нижней границы так и после
+  http://joxi.ru/vAWw08viRz0jDA
 ---
+test-cases:
 - summary: |
     Проверка возможности фильтровать товары по цене.
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Вводим в строку 'price' ценовой интервал от -100 до 0
-    - Нажимаем кнопку "enter"
-  expected-result: |
-    При данном диапазоне фильтр не работает
-  actual-result: |
+status:
+  fail
+bugreports:
+  - summary: |
+  Фильтр товаров по цене работает некорректно
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
+- Вводим в строку 'price' ценовой интервал от -100 до 0
+- Нажимаем кнопку "enter"
+expected-result: |
+  При данном диапазоне фильтр не работает, товары не отображаются
+actual-result: |
+  Запрос на бекэенд не отправляется
+  http://joxi.ru/zANl83GCwa9Nem
 
 ---
+test-cases:
 - summary: |
     Проверка возможности просматривать карточку товара и инф-ию о товаре.
-  requirement: |
-    Пользователь должен иметь возможность просматривать товары
-    и просматривать подробную информацию о товаре.
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Отображение карточки некорректно
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
     - Перейти в произвольную карточку товара
     - Нажать на фотографии в карточке
-  expected-result: |
+expected-result: |
     В карточке отображается название, описание, цена,
     цена со скидкой, категория, открываются фотографии
-  actual-result: |
-
+actual-result: |
+    В карточке отображается название, описание, цена,
+    цена со скидкой, категория, но не открываются фотографии
 ---
+test-cases:
 - summary: |
     Проверка функционала корзины.
-  requirement: |
-    Пользователь должен иметь возможность добавлять товары
-    в корзину и просматривать содержимое корзины
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Перейти в произвольную карточку товара
-    - Нажать "добавить в корзину"
-    - Перейти в корзину
-  expected-result: |
-    В корзине отображается добавленная позиция, ее количество, стоимость,
-    кнопка "оформить заказ", кнопка "очистить содержимое корзины", кнопка "продолжить покупки"
-   actual-result: |
-
+status:
+  pass
 ---
+test-cases:
 - summary: |
     Проверка функционала корзины.
-  requirement: |
-    Пользователь должен иметь возможность добавлять товары
-    в корзину и просматривать содержимое корзины
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Функционал корзины работает некорректно
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
     - Перейти в произвольную карточку товара
     - Добавить произвольный товар в корзину
     - Перейти в корзину, вручную исправить количество до 10000
-  expected-result: |
+expected-result: |
     Нельзя добавить товара больше, чем его количество.
     Просиходит сброс ввода до количества товара на остатке
-   actual-result: |
+actual-result: |
+  Нет возможности вручную изменить количество товара в корзине 
+  http://joxi.ru/nAyjV1otkRz5jr
 
 #
 #нефункциональное тестирование 
 ---
+test-cases:
 - summary: |
     Проверка удобства использования сайта.
-  requirement: |
-    Веб-сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/ в браузере google chrome
-    Открыты devtools
-  test-data: |
-    no data
-  steps:
+status:
+  pass
+---
+test-cases:
+- summary: |
+    Проверка удобства использования сайта.
+status:
+  fail
+bugreports:
+- summary: |
+  Анализ удобства использования сайта.
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
+    - Открыть devtools нажав на f12
     - Перейти во вкладку lighthouse 
     - Установить маркеры:
         колонка "mode" значение "navigation"
@@ -185,200 +207,146 @@
   expected-result: |
     Полученный результат больше 80 единиц
   actual-result: |
-
----
-- summary: |
-    Проверка удобства использования сайта.
-  requirement: |
-    Веб-сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/ в браузере google chrome
-    Открыты devtools
-  test-data: |
-    no data
-  steps:
-    - Перейти во вкладку lighthouse 
-    - Установить маркеры:
-        колонка "mode" значение "navigation"
-        колонка "categories" значение "perfomance"
-        колонка "device" значение "mobile"
-    - Нажать кнопку "analize page load"
-  expected-result: |
-    Полученный результат больше 80 единиц
-  actual-result: |
-
+  Результат 71 балл. Ниже требований
+  http://joxi.ru/Q2KMEZGFgpxbwr
 # Сайт должен быть безопасным и защищать данные пользователя.
 ---
+test-cases:
 - summary: |
     Проверка безопасности форм для ввода и защиты данных пользователей.
-  requirement: |
-    Сайт должен быть безопасным и защищать данные пользователя.
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - В поле поиска ввести значение "<script>alert("Я ТЕБЯ СЛОМАЛ АХАХА")</script>" 
-  expected-result: |
-    Скрипт обрабатывается, как текст, по поиску ничего не найдено.
-   actual-result: |
-
+status:
+  pass
 ---
 # Сайт должен иметь мобильную версию.
+test-cases:
 - summary: |
     Проверка корректности отображения сайта на мобильных устройствах.
-  requirement: |
-    Сайт должен иметь мобильную версию.
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-    Открыты devtools, вкладка network
-  test-data: |
-    no data
-  steps:
-    - Переключить отображение размера экрана на Iphone XR
-    - Перейти в произвольную карточку товара 
-  expected-result: |
-    Товары, фильтры и надписи отображаются корректно
-  actual-result: |
-
+status:
+  fail
+bugreports:
+- summary: |
+    Некорректное отображение макета страницы
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
+  - Переключить отображение размера экрана на Iphone XR
+  - Перейти в произвольную карточку товара 
+expected-result: |
+  Товары, фильтры и надписи отображаются корректно
+actual-result: |
+  Фильтры отображаются в конце страницы, а не слева сбоку, шапка сайта скроллится вместе со страницей
+  http://joxi.ru/bmo7pKnFl1PwJm
 ---
 # Сайт должен быть протестирован на совместимость с последними версиями браузеров.
+test-cases:
 - summary: |
     Проверка возможности использования сайта в разных браузерах.
-  requirement: |
-     Сайт должен быть протестирован на совместимость с последними версиями браузеров
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/ в браузере google chrome
-  test-data: |
-    no data
-  steps:
-    - Перейти в любую карточку товара
-    - добавить товар в корзину
-    - перейти в корзину
-  expected-result: |
-    Товар добавлен в корзину
-  actual-result: |
-
+status:
+  pass
+---
+test-cases:
+- summary: |
+    Проверка возможности использования сайта в разных браузерах.
+status:
+  pass
+---
+test-cases:
+- summary: |
+    Проверка возможности использования сайта в разных браузерах.
+status:
+test-cases:
+  pass
 ---
 - summary: |
-    Проверка возможности использования сайта в разных браузерах.
-  requirement: |
-     Сайт должен быть протестирован на совместимость с последними версиями браузеров
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/ в браузере firefox
-  test-data: |
-    no data
-  steps:
-    - Перейти в любую карточку товара
-    - добавить товар в корзину
-    - перейти в корзину
-  expected-result: |
-    Товар добавлен в корзину
-   actual-result: |
-
+status:
+  pass
 ---
-- summary: |
-    Проверка возможности использования сайта в разных браузерах.
-  requirement: |
-     Сайт должен быть протестирован на совместимость с последними версиями браузеров
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/ в браузере edge
-  test-data: |
-    no data
-  steps:
-    - Перейти в любую карточку товара
-    - добавить товар в корзину
-    - перейти в корзину
-  expected-result: |
-    Товар добавлен в корзину
-   actual-result: |
-
 # Неявные требования
 ---
+test-cases:
 - summary: |
     Проверка корректного отображения языка и стоимости товара
-  requirement: |
-    Стоимость и описание товара должны отображаться в разных валютах в зависимости от выбранного языка
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Некорректное отображение информации о товаре
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
     - перейти в карточку любого товара
     - добавить товар в корзину
     - Нажать на кнопку language в правом верхнем углу
     - выбрать язык english
     - сменить язык на русский
-  expected-result: |
+expected-result: |
     При выбранном английском языке название, описание товара и кнопки сайта
     отображаются на английском языке, стоимость товара указана в долларах
     При выбранном русском языке название, описание товара и кнопки сайта
     отображаются на русском языке, стоимость товара указана в рублях
-  actual-result: |
+actual-result: |
+  При выбранном русском языке описание и цена товара соответствуют английскому языку
+  http://joxi.ru/nAyjV1otkRPZZr
+
 
 ---
+test-cases:
 - summary: |
     Проверка использования файлов cookie.
-  requirement: |
-    При первом посещении сайта должна появляться надпись принятия cookie файлов
-  prerequisites: |
-    Шаги осуществлябтся в браузере в режиме инкогнито
-  test-data: |
-    no data
-  steps:
-    - Открыть страницу https://hexlet-products-store.vercel.app/
-  expected-result: |
-    Появилось всплывающие сообщение об использовании cookie файлов
-  actual-result: |
-
----
-  - После добавления товара в корзину должно появляться сообщение об этом
+  status:
+  fail
+bugreports:
 - summary: |
-    Проверка удобства пользования корзиной. 
-  requirement: |
-    После добавления товара в корзину должно появляться сообщение об этом.
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-   steps:
+  Не появляется надпись принятия cookie файлов
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome инкогнито
+steps-to-reproduce: |
+    При открытии браузера в инкогнито появилось
+    всплывающее сообщение об использовании cookie файлов
+actual-result: |
+  данное сообщение о принятии cookie файлов не отображается
+  ни при первом открытии сайта ни при последующих
+---
+test-cases:
+- summary: |
+  - После добавления товара в корзину должно появляться сообщение об этом
+status: |
+  fail
+bugreports:
+- summary: |
+  Проверка всплывающего окна корзины
+environment: |
+    Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+    в браузере google chrome
+steps-to-reproduce: |
     - Перейти в любую карточку товара
     - добавить товар в корзину 
-  expected-result: |
-    Появилось всплывающее окно в правом верхнем углу экрана о том, что товар успешно добавлен в корзину
-  actual-result: |
-
+expected-result: |
+  Появилось всплывающее окно в правом верхнем углу экрана о том, что товар успешно добавлен в корзину
+actual-result: |
+  При добавлении товара в корзину нет всплывающих подсказок
 ---
+test-cases:
 - summary: |
-    Магазин работает без перезагрузки страниц
-  requirement: |
-    Данный интернет магазин работает, как SPA приложение
-  prerequisites: |
-    нет
-  test-data: |
-    no data
-   steps:
-    - Перейти на https://hexlet-products-store.vercel.app/
-    - Открыть devtools во вкладке network
-    - Перейти в любую карточку товара
-    - добавить товар в корзину
-    - перейти в корзину 
-  expected-result: |
-    Все элементы сайта были загружены при переходе на него, после перехода в карточку товара и корзину
-    сайт не перезагружает страницу, в devtools отображается только подгрузка элементов
-  actual-result: |
-
+  Магазин работает без перезагрузки страниц
+status:
+  pass
 ---
+test-cases:
 - summary: |
     Оформление заказа без авторизации
-  requirement: |
-    Пользователь должен иметь возможность оформить заказ без авторизации
-  prerequisites: |
-    Открыть https://hexlet-products-store.vercel.app/
-    в режиме инкогнито
-  test-data: |
-    no data
-   steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Нет возможности оформить заказ без авторизации
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome
+steps-to-reproduce: |
     - Перейти в любую карточку товара
     - добавить товар в корзину
     - перейти в корзину
@@ -387,19 +355,23 @@
     Появляется окно, где покупателю необходимо оставить электронную почту
     и телефон для связи с оператором по заказу
   actual-result: |
-
+  После выполнения последнего шага появляется окно "заказ успешно оформлен",
+  окна для оставления контактов нет, статус отправки заказа 500, корзина не очищается
+  http://joxi.ru/5mdZ895HJdG3DA
 ---
+test-cases:
 - summary: |
     Отправка заказа без авторизации
-  requirement: |
-    Пользователь должен иметь возможность оформить заказ без авторизации
-  prerequisites: |
-    Открыть https://hexlet-products-store.vercel.app/
-    в режиме инкогнито
-    Открыть devtools на вкладке network
-  test-data: |
-    no data
-   steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Нет возможности оформить заказ без авторизации
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome инкогнито
+steps-to-reproduce: |
+    - Открыть devtools на вкладке network
     - Перейти в любую карточку товара
     - добавить товар в корзину
     - перейти в корзину
@@ -411,17 +383,22 @@
     Появляется сообщение "Заказ успешно создан. Оператор свяжется с вами в ближайшие 15 минут"
     В devtools отображается отправленный запрос со статусом 200
   actual-result: |
-
+  После выполнения "нажать оформить заказ" появляется окно "заказ успешно оформлен",
+  окна для оставления контактов нет, статус отправки заказа 500, корзина не очищается
+  http://joxi.ru/5mdZ895HJdG3DA
 ---
+test-cases:
 - summary: |
     Регистрация пользователя
-  requirement: |
-    Пользователь должен иметь возможность регистрации в ИМ
-  prerequisites: |
-    Открыть https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-   steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Нет возможности регистрации в ИМ
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome
+steps-to-reproduce: |
     - Нажать кнопку вход или регистрация
     - в появившемся окне заполнить телефон +79080000000
     - email 12345@mail.ru
@@ -429,19 +406,23 @@
     - нажать кнопку "готово"
   expected-result: |
     Пользователь успешно зарегистрирован, происходит автоматический переход
-    на главную страницу https://hexlet-products-store.vercel.app/
+    на главную страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
   actual-result: |
+  Нет кнопки регистрация. Невозможно выполнить шаги.
 
 ---
+test-cases:
 - summary: |
     Регистрация пользователя
-  requirement: |
-    Пользователь должен иметь возможность регистрации в ИМ
-  prerequisites: |
-    Открыть https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-   steps:
+status:
+  fail
+bugreports:
+- summary: |
+  Нет возможности регистрации в ИМ
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome
+steps-to-reproduce: |
     - Нажать кнопку вход или регистрация
     - в появившемся окне заполнить телефон 89080
     - email 12345mail.ru
@@ -454,39 +435,31 @@
     в поле "фамилия и имя" выпадает подсказка "должно содержать не менее трех букв"
     Регистрация неуспешна
   actual-result: |
-
+  Нет кнопки регистрация, нет кнопки вход. Невозможно выполнить шаги.
 ---
+test-cases:
 - summary: |
     Проверка  возможности перехода из карточки товара в категорию товара.
-  requirement: |
-    На странице товара пользователь может перейти по ссылке в категорию товара
-  prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    no data
-  steps:
-    - Переходим на страницу https://hexlet-products-store.vercel.app/products/8#
-    - Нажимаем на категорию товара "laptops"
+status:
+  fail
+bugreports:
+- summary: |
+  Некорректный переход со страницы товара в категорию товара
+environment: |
+  Открыта страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ 
+  в браузере google chrome
+steps-to-reproduce: |
+    - Переходим на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/products/32
+    - Нажимаем на категорию товара "furniture"
   expected-result: |
-    Отображаются товары, из категории "laptops"
-  actual-result: |
-
+    Отображаются товары, из категории "furniture"
+  actual-result:
+  Происходит переход на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/?category=furniture
+  заполняется форма категории "furniture", но выборки товара не происходит
+  http://joxi.ru/Dr8L8YjtD3XN5r
 ---
+test-cases:
 - summary: |
     Корзина хранится в сессии браузера
-  requirement: |
-    Корзина хранится в сессии браузера
-  prerequisites: |
-    нет
-  test-data: |
-    no data
-   steps:
-    - Перейти на https://hexlet-products-store.vercel.app/
-    - Открыть devtools во вкладке network
-    - Перейти в любую карточку товара
-    - Добавить товар в корзину
-    - Перейти в корзину
-    - Перезагрузить страницу сочетанием клавиш ctrl + shift + R
-  expected-result: |
-    В корзине остались все добавленные ранее товары
-  actual-result: |
+status:
+  pass
